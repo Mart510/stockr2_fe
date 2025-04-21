@@ -43,7 +43,7 @@ const TickrCard = ({
 
     return (
         <div
-            className="w-8/10 md:w-1/4 h-fit md:h-100 p-2 md:p-4 rounded-2xl bg-white/5 backdrop-blur-[3px] border border-white/20 bg-opacity-20 shadow-lg text-white flex flex-col gap-1 hover:scale-101 transition-all duration-1000 ease-in-out hover:shadow-2xl hover:bg-white/20 hover:bg-opacity-20"
+            className="w-[320px] md:w-[320px] flex-none h-auto md:h-[480px] p-4 rounded-2xl bg-white/5 backdrop-blur-[3px] border border-white/20 bg-opacity-20 shadow-lg text-white flex flex-col gap-2 hover:scale-101 transition-all duration-300 ease-in-out hover:shadow-2xl hover:bg-white/20 hover:bg-opacity-20"
             onClick={onClick}
         >
             {showSummary ? (

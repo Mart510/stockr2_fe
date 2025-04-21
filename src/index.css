@@ -59,3 +59,22 @@ button:focus-visible {
   }
 
 }
+
+.fallback-gradient {
+  color: #1f2937; /* Tailwind's gray-800 */
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .fallback-gradient {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), black);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .fallback-gradient {
+      background: linear-gradient(to bottom, white, #AAAAAA);
+    }
+  }
+}
