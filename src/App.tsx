@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center max-w-7xl mx-auto">
+    <main className="flex h-full flex-col items-center justify-center max-w-7xl mx-auto mb-40 sm:mb-0">
       <div className="mx-6 mt-12 mb-6 bg-gradient-to-b from-black/80 to-black bg-clip-text text-center text-2xl font-extrabold text-transparent dark:from-white dark:to-[#AAAAAA]">
         <h1>Coin watcher</h1>
         <p className='mx-6 text-center font-mono text-xl text-[#666666] dark:text-[#888888]'>5-Minute Market Updates</p>
