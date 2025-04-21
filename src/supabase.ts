@@ -1,11 +1,16 @@
 import { createClient } from '@supabase/supabase-js'
 
 interface ticker {
+    ticker_id: string,
     ticker: string,
     ticker_name: string,
-    ticker_id: string,
-    latest: spotPrice[]
-    daily: dailySummary
+    logo_url: string,
+    description: string,
+    api_source: string,
+    last_called_at: string,
+    latest_price: spotPrice[]
+    daily_summary: dailySummary
+
 }
 
 interface spotPrice {
@@ -59,7 +64,7 @@ const initializeSupabase = () => {
 const supabase = initializeSupabase()
 
 const getLatest = async (): Promise<ticker[]> => {
-    const { data, error } = await supabase.rpc("GetLatest")
+    const { data, error } = await supabase.rpc("getLatest")
     if (error) {
         console.error('Error fetching throw')
         throw new Error('Error fetching latest ticker data')
@@ -68,7 +73,7 @@ const getLatest = async (): Promise<ticker[]> => {
 }
 
 const getLatestByTicker = async (ticker: string): Promise<ticker> => {
-    const { data, error } = await supabase.rpc("GetLatestByTicker", { input_ticker: ticker })
+    const { data, error } = await supabase.rpc("getTickerData", { input_ticker: ticker })
     if (error) {
         console.error('Error fetching latest:', error)
         throw new Error('Error fetching latest ticker data')
@@ -77,3 +82,4 @@ const getLatestByTicker = async (ticker: string): Promise<ticker> => {
 }
 
 export {getLatest, getLatestByTicker}
+export type { ticker, spotPrice, dailySummary }
